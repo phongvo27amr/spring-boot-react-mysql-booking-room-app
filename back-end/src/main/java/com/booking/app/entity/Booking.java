@@ -27,6 +27,7 @@ public class Booking {
 
   @NotNull(message = "Check-in date is required.")
   private LocalDate checkInDate;
+
   @Future(message = "Check-out date must be in the future.")
   private LocalDate checkOutDate;
 
