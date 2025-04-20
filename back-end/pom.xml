@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.4.4</version>
+		<version>3.3.0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.booking</groupId>
@@ -71,27 +71,27 @@
     <dependency>
         <groupId>io.jsonwebtoken</groupId>
         <artifactId>jjwt-jackson</artifactId>
-        <version>0.12.6</version>
+        <version>0.12.5</version>
         <scope>runtime</scope>
     </dependency>
     <!-- https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt-impl -->
     <dependency>
       <groupId>io.jsonwebtoken</groupId>
       <artifactId>jjwt-impl</artifactId>
-      <version>0.12.6</version>
+      <version>0.12.5</version>
       <scope>runtime</scope>
     </dependency>
     <!-- https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt-api -->
     <dependency>
       <groupId>io.jsonwebtoken</groupId>
       <artifactId>jjwt-api</artifactId>
-      <version>0.12.6</version>
+      <version>0.12.5</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-s3 -->
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-s3</artifactId>
-      <version>1.12.782</version>
+      <version>1.12.728</version>
     </dependency>
 	</dependencies>
 
