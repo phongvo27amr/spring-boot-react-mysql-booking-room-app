@@ -112,10 +112,9 @@ public class RoomService implements IRoomService {
       Room updatedRoom = roomRepository.save(room);
       RoomDto roomDto = Utils.mapRoomEntityToRoomDto(updatedRoom);
 
-      roomRepository.findById(roomId).orElseThrow(() -> new MyException("Room not found"));
-      roomRepository.deleteById(roomId);
       response.setStatusCode(200);
       response.setMessage("Successful");
+      response.setRoom(roomDto);
     } catch (MyException e) {
       response.setStatusCode(404);
       response.setMessage(e.getMessage());
