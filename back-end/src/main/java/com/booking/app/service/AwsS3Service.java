@@ -33,7 +33,7 @@ public class AwsS3Service {
       BasicAWSCredentials awsCredentials = new BasicAWSCredentials(awsS3AccessKey, awsS3SecretKey);
       AmazonS3 s3Client = AmazonS3ClientBuilder.standard()
         .withCredentials(new AWSStaticCredentialsProvider(awsCredentials))
-        .withRegion(Regions.US_EAST_2)
+        .withRegion(Regions.AP_SOUTHEAST_1)
         .build();
 
       InputStream inputStream = photo.getInputStream();
@@ -43,7 +43,7 @@ public class AwsS3Service {
 
       PutObjectRequest putObjectRequest = new PutObjectRequest(bucketName, s3FileName, inputStream, metadata);
       s3Client.putObject(putObjectRequest);
-      return "https://" + bucketName + "s3.amazonaws.com/" + s3FileName;
+      return "https://" + bucketName + ".s3.amazonaws.com/" + s3FileName;
     } catch (Exception e) {
       e.printStackTrace();
       throw new MyException("Unable to upload image to s3 bucket" + e.getMessage());
