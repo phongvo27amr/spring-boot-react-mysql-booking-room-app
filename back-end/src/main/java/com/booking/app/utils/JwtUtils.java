@@ -1,6 +1,5 @@
 package com.booking.app.utils;
 
-import java.nio.charset.StandardCharsets;
 import java.util.Base64;
 import java.util.Date;
 import java.util.function.Function;
@@ -21,18 +20,18 @@ public class JwtUtils {
   private final SecretKey Key;
 
   public JwtUtils() {
-    String secretString = "89R57774YG4KT8030FGV";
-    byte[] keyBytes = Base64.getDecoder().decode(secretString.getBytes(StandardCharsets.UTF_8));
+    String base64Secret = "Gm5BfH6v9rXQ4KsH7KDUpiyMA6zrMwJXK6SRJ3MFLz0=";
+    byte[] keyBytes = Base64.getDecoder().decode(base64Secret);
     this.Key = new SecretKeySpec(keyBytes, "HmacSHA256");
   }
 
   public String generateToken(UserDetails userDetails) {
     return Jwts.builder()
-            .subject(userDetails.getUsername())
-            .issuedAt(new Date(System.currentTimeMillis()))
-            .expiration(new Date(System.currentTimeMillis() + EXPIRATION_TIME))
-            .signWith(Key)
-            .compact();
+        .subject(userDetails.getUsername())
+        .issuedAt(new Date(System.currentTimeMillis()))
+        .expiration(new Date(System.currentTimeMillis() + EXPIRATION_TIME))
+        .signWith(Key)
+        .compact();
   }
 
   public String extractUsername(String token) {
