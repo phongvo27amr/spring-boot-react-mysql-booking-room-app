@@ -55,10 +55,12 @@ public class Booking {
 
   public void setNumOfAdults(int numOfAdults) {
     this.numOfAdults = numOfAdults;
+    calculateTotalNumOfGuest();
   }
 
   public void setNumOfChildren(int numOfChildren) {
     this.numOfChildren = numOfChildren;
+    calculateTotalNumOfGuest();
   }
 
   @Override
