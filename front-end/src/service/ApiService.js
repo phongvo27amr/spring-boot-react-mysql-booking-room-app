@@ -1,7 +1,6 @@
-import axios from "axios"
+import axios from 'axios';
 
 export default class ApiService {
-
   static BASE_URL = "http://localhost:8081"
 
   static getHeader() {
@@ -169,7 +168,7 @@ export default class ApiService {
   }
 
 
-  /**AUTHENTICATION CHECKER */
+  /* AUTHENTICATION CHECKER */
   static logout() {
     localStorage.removeItem('token')
     localStorage.removeItem('role')
@@ -190,4 +189,3 @@ export default class ApiService {
     return role === 'USER'
   }
 }
-// export default new ApiService();

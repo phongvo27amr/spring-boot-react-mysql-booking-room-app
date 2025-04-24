@@ -157,12 +157,11 @@ button[type="submit"]:hover {
 
 /* FOOTER STYKLING */
 .my-footer {
+  display: block;
   color: #f0e8e8;
   background-color: #444;
   padding: 20px;
   text-align: center;
-  position: fixed;
-  bottom: 0;
   width: 100%;
   font-weight: 500;
 }
