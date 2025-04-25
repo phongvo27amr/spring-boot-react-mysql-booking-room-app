@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { NavLink, useNavigate } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 
 import ApiService from '../../service/ApiService';
 
@@ -35,7 +35,7 @@ function Navbar() {
         {!isAuthenticated && <li><NavLink to="/login" activeclass="active">Log In</NavLink></li>}
         {!isAuthenticated && <li><NavLink to="/register" activeclass="active">Register</NavLink></li>}
 
-        {isAuthenticated && <li onClick={handleLogout}>Log Out</li>}
+        {isAuthenticated && <li onClick={handleLogout}><Link>Log Out</Link></li>}
       </ul>
     </nav>
   );
