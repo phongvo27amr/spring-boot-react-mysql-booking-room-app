@@ -7,6 +7,7 @@ import FindBookingPage from './component/booking_rooms/FindBookingPage';
 import Footer from './component/common/Footer';
 import Home from './component/home/Home';
 import Navbar from './component/common/Navbar';
+import RoomDetailsPage from './component/booking_rooms/RoomDetailsPage';
 
 import './App.css';
 
@@ -21,6 +22,7 @@ function App() {
             <Route exact path="/" element={<Home />} />
             <Route exact path="/rooms" element={<AllRoomsPage />} />
             <Route path="/find-booking" element={<FindBookingPage />} />
+            <Route path="/room-details-book/:roomId" element={<RoomDetailsPage />} />
           </Routes>
         </div>
 
