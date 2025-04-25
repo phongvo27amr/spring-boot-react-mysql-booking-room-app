@@ -3,11 +3,13 @@ import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 import AllRoomsPage from './component/booking_rooms/AllRoomsPage';
+import EditProfilePage from './component/profile/EditProfilePage';
 import FindBookingPage from './component/booking_rooms/FindBookingPage';
 import Footer from './component/common/Footer';
 import Home from './component/home/Home';
 import LoginPage from './component/auth/LoginPage';
 import Navbar from './component/common/Navbar';
+import ProfilePage from './component/profile/ProfilePage';
 import RegisterPage from './component/auth/RegisterPage';
 import RoomDetailsPage from './component/booking_rooms/RoomDetailsPage';
 
@@ -27,6 +29,9 @@ function App() {
             <Route path="/room-details-book/:roomId" element={<RoomDetailsPage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
+
+            <Route path="/profile" element={<ProfilePage />} />
+            <Route path="/edit-profile" element={<EditProfilePage />} />
           </Routes>
         </div>
 
