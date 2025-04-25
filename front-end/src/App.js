@@ -3,6 +3,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 import AllRoomsPage from './component/booking_rooms/AllRoomsPage';
+import FindBookingPage from './component/booking_rooms/FindBookingPage';
 import Footer from './component/common/Footer';
 import Home from './component/home/Home';
 import Navbar from './component/common/Navbar';
@@ -19,6 +20,7 @@ function App() {
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route exact path="/rooms" element={<AllRoomsPage />} />
+            <Route path="/find-booking" element={<FindBookingPage />} />
           </Routes>
         </div>
 
