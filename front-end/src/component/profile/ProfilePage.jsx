@@ -34,7 +34,7 @@ const ProfilePage = () => {
 
   return (
     <div className="profile-page" >
-      {user && <h2>Welcome, {user.name} </h2>
+      {user && <h2>Hello, {user.name}. Have a nice day!</h2>
       }
       <div className="profile-actions" >
         <button className="edit-profile-button" onClick={handleEditProfile} > Edit Profile </button>

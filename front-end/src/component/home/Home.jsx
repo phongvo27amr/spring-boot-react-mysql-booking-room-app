@@ -27,8 +27,6 @@ const Home = () => {
       <RoomSearch handleSearchResult={handleSearchResult} />
       <RoomResult roomSearchResults={roomSearchResults} />
 
-      <h4><a className="view-rooms-home" href="/rooms">All Rooms</a></h4>
-
       <h2 className="home-services">Services at <span className="phegon-color">My Hotel</span></h2>
 
       <section className="service-section"><div className="service-card">
