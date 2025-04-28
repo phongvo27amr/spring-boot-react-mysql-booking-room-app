@@ -2,7 +2,7 @@ const Footer = () => {
   return (
     <footer>
       <span className="my-footer">
-        &copy; {new Date().getFullYear()} Hotel Booking
+        &copy; {new Date().getFullYear()} Study Space Booking
       </span>
     </footer>
   )

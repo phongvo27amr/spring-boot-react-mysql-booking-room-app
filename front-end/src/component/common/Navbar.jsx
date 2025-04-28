@@ -21,7 +21,7 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-brand">
-        <NavLink to="/">Hotel Booking</NavLink>
+        <NavLink to="/">Study Space Booking</NavLink>
       </div>
 
       <ul className="navbar-ul">

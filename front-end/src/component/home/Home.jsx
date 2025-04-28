@@ -13,13 +13,14 @@ const Home = () => {
     <div className="home">
       <section>
         <header className="header-banner">
-          <img src="./assets/images/hotel.webp" alt="My Hotel" className="header-image" />
+          <img src="./assets/images/banner.png" alt="Study Space Booking" className="header-image" />
           <div className="overlay"></div>
           <div className="animated-texts overlay-content">
             <h1>
-              Welcome to <span className="phegon-color">My Hotel</span>
+              Welcome to <span className="phegon-color">Study Space Booking</span>
             </h1><br />
-            <h3>Step into a haven of comfort and care</h3>
+
+            <h3>Step into a haven of comfort and concentrate on your study</h3>
           </div>
         </header>
       </section>
@@ -27,7 +28,7 @@ const Home = () => {
       <RoomSearch handleSearchResult={handleSearchResult} />
       <RoomResult roomSearchResults={roomSearchResults} />
 
-      <h2 className="home-services">Services at <span className="phegon-color">My Hotel</span></h2>
+      <h2 className="home-services">Services at <span className="phegon-color">Our Space Booking</span></h2>
 
       <section className="service-section"><div className="service-card">
         <img src="./assets/images/ac.png" alt="Air Conditioning" />
