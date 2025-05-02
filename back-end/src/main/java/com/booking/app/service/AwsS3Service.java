@@ -18,7 +18,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 @Service
 public class AwsS3Service {
-  private final String bucketName = "hotel-images-27bcc";
+  private final String bucketName = "space-booking-27amo";
 
   @Value("${aws.s3.access.key}")
   private String awsS3AccessKey;
