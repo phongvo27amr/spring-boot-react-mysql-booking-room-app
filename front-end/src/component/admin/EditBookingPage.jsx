@@ -57,8 +57,8 @@ const EditBookingPage = () => {
           <p>Confirmation Code: {bookingDetails.bookingConfirmationCode}</p>
           <p>Check-in Date: {bookingDetails.checkInDate}</p>
           <p>Check-out Date: {bookingDetails.checkOutDate}</p>
-          <p>Num Of Adults: {bookingDetails.numOfAdults}</p>
-          <p>Num Of Children: {bookingDetails.numOfChildren}</p>
+          <p>Num Of Adults: {bookingDetails.numOfStudents}</p>
+          <p>Num Of Children: {bookingDetails.numOfTa}</p>
           <p>Guest Email: {bookingDetails.guestEmail}</p>
 
           <br />

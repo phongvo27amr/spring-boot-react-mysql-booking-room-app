@@ -13,8 +13,8 @@ public class BookingDto {
   private Long id;
   private LocalDate checkInDate;
   private LocalDate checkOutDate;
-  private int numOfAdults;
-  private int numOfChildren;
+  private int numOfStudents;
+  private int numOfTa;
   private int totalNumOfGuest;
   private String bookingConfirmationCode;
   private UserDto user;

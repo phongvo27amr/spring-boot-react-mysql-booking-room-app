@@ -31,11 +31,11 @@ public class Booking {
   @Future(message = "Check-out date must be in the future.")
   private LocalDate checkOutDate;
 
-  @Min(value = 1, message = "Number of adults must not be less than 1.")
-  private int numOfAdults;
+  @Min(value = 1, message = "Number of students must not be less than 1.")
+  private int numOfStudents;
 
-  @Min(value = 0, message = "Number of children must not be less than 0.")
-  private int numOfChildren;
+  @Min(value = 0, message = "Number of TA must not be less than 0.")
+  private int numOfTa;
 
   private int totalNumOfGuest;
 
@@ -50,16 +50,16 @@ public class Booking {
   private Room room;
 
   public void calculateTotalNumOfGuest() {
-    this.totalNumOfGuest = this.numOfAdults + this.numOfChildren;
+    this.totalNumOfGuest = this.numOfStudents + this.numOfTa;
   }
 
-  public void setNumOfAdults(int numOfAdults) {
-    this.numOfAdults = numOfAdults;
+  public void setnumOfStudents(int numOfStudents) {
+    this.numOfStudents = numOfStudents;
     calculateTotalNumOfGuest();
   }
 
-  public void setNumOfChildren(int numOfChildren) {
-    this.numOfChildren = numOfChildren;
+  public void setnumOfTa(int numOfTa) {
+    this.numOfTa = numOfTa;
     calculateTotalNumOfGuest();
   }
 
@@ -69,8 +69,8 @@ public class Booking {
             "id=" + id +
             ", checkinDate=" + checkInDate +
             ", checkOutDate=" + checkOutDate +
-            ", numOfAdults=" + numOfAdults +
-            ", numOfChildren=" + numOfChildren +
+            ", numOfStudents=" + numOfStudents +
+            ", numOfTa=" + numOfTa +
             ", totalNumOfGuest=" + totalNumOfGuest +
             ", bookingConfirmationCode='" + bookingConfirmationCode + '\'' +
             '}';

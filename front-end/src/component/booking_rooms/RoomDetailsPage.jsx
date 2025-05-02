@@ -91,8 +91,8 @@ const RoomDetailsPage = () => {
       const booking = {
         checkInDate: formattedCheckInDate,
         checkOutDate: formattedCheckOutDate,
-        numOfAdults: numAdults,
-        numOfChildren: numChildren
+        numOfStudents: numAdults,
+        numOfTa: numChildren
       };
       console.log(booking)
       console.log(checkOutDate)
