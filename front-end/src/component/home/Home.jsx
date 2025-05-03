@@ -31,31 +31,31 @@ const Home = () => {
       <h2 className="home-services">Services at <span className="phegon-color">Our Space Booking</span></h2>
 
       <section className="service-section"><div className="service-card">
-        <img src="./assets/images/ac.png" alt="Air Conditioning" />
+        <img src="./assets/images/icons8-air-conditioner-96.png" alt="Air Conditioning" width="50px" height="50px" />
         <div className="service-details">
           <h3 className="service-title">Air Conditioning</h3>
-          <p className="service-description">Stay cool and comfortable throughout your stay with our individually controlled in-room air conditioning.</p>
+          <p className="service-description">Stay focused and comfortable in a climate-controlled environment. All study rooms are equipped with air conditioning to maintain a pleasant temperature, helping you concentrate better during long study sessions.</p>
         </div>
       </div>
         <div className="service-card">
-          <img src="./assets/images/mini-bar.png" alt="Mini Bar" />
+          <img src="./assets/images/icons8-wifi-96.png" alt="Internet Access" width="50px" height="50px" />
           <div className="service-details">
-            <h3 className="service-title">Mini Bar</h3>
-            <p className="service-description">Enjoy a convenient selection of beverages and snacks stocked in your room's mini bar with no additional cost.</p>
+            <h3 className="service-title">Internet Access</h3>
+            <p className="service-description">Enjoy fast and reliable Wi-Fi in every room. Whether you're attending online classes, conducting research, or collaborating on group projects, our high-speed internet ensures you stay connected without interruption.</p>
           </div>
         </div>
         <div className="service-card">
-          <img src="./assets/images/parking.png" alt="Parking" />
+          <img src="./assets/images/icons8-power-96.png" alt="Power Outlets" width="50px" height="50px" />
           <div className="service-details">
-            <h3 className="service-title">Parking</h3>
-            <p className="service-description">We offer on-site parking for your convenience . Please inquire about valet parking options if available.</p>
+            <h3 className="service-title">Power Outlets</h3>
+            <p className="service-description">Keep your devices fully charged throughout your booking. Each study room includes multiple easily accessible power outlets, so you never have to worry about running out of battery during important work.</p>
           </div>
         </div>
         <div className="service-card">
-          <img src="./assets/images/wifi.png" alt="WiFi" />
+          <img src="./assets/images/icons8-presentation-96.png" alt="Whiteboard/Presentation Screen" width="50px" height="50px" />
           <div className="service-details">
-            <h3 className="service-title">WiFi</h3>
-            <p className="service-description">Stay connected throughout your stay with complimentary high-speed Wi-Fi access available in all guest rooms and public areas.</p>
+            <h3 className="service-title">Whiteboard/Presentation Screen</h3>
+            <p className="service-description">Enhance your study sessions with visual tools. Our rooms feature whiteboards or presentation screens, perfect for brainstorming ideas, working through problems, or delivering group presentations.</p>
           </div>
         </div>
 
