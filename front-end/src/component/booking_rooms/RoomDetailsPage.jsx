@@ -13,8 +13,8 @@ const RoomDetailsPage = () => {
   const [error, setError] = useState(null);
   const [checkInDate, setCheckInDate] = useState(null);
   const [checkOutDate, setCheckOutDate] = useState(null);
-  const [numAdults, setNumAdults] = useState(1);
-  const [numChildren, setNumChildren] = useState(0);
+  const [numStudents, setNumStudents] = useState(1);
+  const [numTa, setNumTa] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
   const [totalGuests, setTotalGuests] = useState(1);
   const [showDatePicker, setShowDatePicker] = useState(false);
@@ -48,8 +48,8 @@ const RoomDetailsPage = () => {
       return;
     }
 
-    if (isNaN(numAdults) || numAdults < 1 || isNaN(numChildren) || numChildren < 0) {
-      setErrorMessage('Please enter valid numbers for adults and children.');
+    if (isNaN(numStudents) || numStudents < 1 || isNaN(numTa) || numTa < 0) {
+      setErrorMessage('Please enter valid numbers for students and TAs.');
       setTimeout(() => setErrorMessage(''), 5000);
       return;
     }
@@ -61,11 +61,11 @@ const RoomDetailsPage = () => {
     const totalDays = Math.round(Math.abs((endDate - startDate) / oneDay)) + 1;
 
     // Calculate total number of guests
-    const totalGuests = numAdults + numChildren;
+    const totalGuests = numStudents + numTa;
 
     // Calculate total price
-    const roomPricePerNight = roomDetails.roomPrice;
-    const totalPrice = roomPricePerNight * totalDays;
+    const roomPricePerDay = roomDetails.roomPrice;
+    const totalPrice = roomPricePerDay * totalDays;
 
     setTotalPrice(totalPrice);
     setTotalGuests(totalGuests);
@@ -91,8 +91,8 @@ const RoomDetailsPage = () => {
       const booking = {
         checkInDate: formattedCheckInDate,
         checkOutDate: formattedCheckOutDate,
-        numOfStudents: numAdults,
-        numOfTa: numChildren
+        numOfStudents: numStudents,
+        numOfTa: numTa
       };
       console.log(booking)
       console.log(checkOutDate)
@@ -132,7 +132,7 @@ const RoomDetailsPage = () => {
     <div className="room-details-booking">
       {showMessage && (
         <p className="booking-success-message">
-          Booking successful! Confirmation code: {confirmationCode}. An SMS and email of your booking details have been sent to you.
+          Booking successful! Confirmation code: {confirmationCode}.
         </p>
       )}
       {errorMessage && (
@@ -145,7 +145,7 @@ const RoomDetailsPage = () => {
       <img src={roomPhotoUrl} alt={roomType} className="room-details-image" />
       <div className="room-details-info">
         <h3>{roomType}</h3>
-        <p>Price: ${roomPrice} / night</p>
+        <p>Price: ${roomPrice} / day</p>
         <p>{description}</p>
       </div>
       {bookings && bookings.length > 0 && (
@@ -193,21 +193,21 @@ const RoomDetailsPage = () => {
 
             <div className='guest-container'>
               <div className="guest-div">
-                <label>Adults:</label>
+                <label>Students:</label>
                 <input
                   type="number"
                   min="1"
-                  value={numAdults}
-                  onChange={(e) => setNumAdults(parseInt(e.target.value))}
+                  value={numStudents}
+                  onChange={(e) => setNumStudents(parseInt(e.target.value))}
                 />
               </div>
               <div className="guest-div">
-                <label>Children:</label>
+                <label>TAs:</label>
                 <input
                   type="number"
                   min="0"
-                  value={numChildren}
-                  onChange={(e) => setNumChildren(parseInt(e.target.value))}
+                  value={numTa}
+                  onChange={(e) => setNumTa(parseInt(e.target.value))}
                 />
               </div>
               <button className="confirm-booking" onClick={handleConfirmBooking}>Confirm Booking</button>

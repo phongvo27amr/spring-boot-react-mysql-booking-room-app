@@ -1,15 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import ApiService from '../../service/ApiService'; // Assuming your service is in a file called ApiService.js
+import ApiService from '../../service/ApiService';
 
 const EditBookingPage = () => {
   const navigate = useNavigate();
   const { bookingCode } = useParams();
-  const [bookingDetails, setBookingDetails] = useState(null); // State variable for booking details
-  const [error, setError] = useState(null); // Track any errors
-  const [success, setSuccessMessage] = useState(null); // Track any errors
-
-
+  const [bookingDetails, setBookingDetails] = useState(null);
+  const [error, setError] = useState(null);
+  const [success, setSuccessMessage] = useState(null);
 
   useEffect(() => {
     const fetchBookingDetails = async () => {
@@ -26,14 +24,14 @@ const EditBookingPage = () => {
 
 
   const archiveBooking = async (bookingId) => {
-    if (!window.confirm('Are you sure you want to archive this booking?')) {
+    if (!window.confirm('Are you sure you want to cancel this booking?')) {
       return; // Do nothing if the user cancels
     }
 
     try {
       const response = await ApiService.cancelBooking(bookingId);
       if (response.statusCode === 200) {
-        setSuccessMessage("The boking was Successfully archived")
+        setSuccessMessage('The boking was successfully cancelled.');
 
         setTimeout(() => {
           setSuccessMessage('');
@@ -57,9 +55,9 @@ const EditBookingPage = () => {
           <p>Confirmation Code: {bookingDetails.bookingConfirmationCode}</p>
           <p>Check-in Date: {bookingDetails.checkInDate}</p>
           <p>Check-out Date: {bookingDetails.checkOutDate}</p>
-          <p>Num Of Adults: {bookingDetails.numOfStudents}</p>
-          <p>Num Of Children: {bookingDetails.numOfTa}</p>
-          <p>Guest Email: {bookingDetails.guestEmail}</p>
+          <p>Number of Students: {bookingDetails.numOfStudents}</p>
+          <p>Number of TAs: {bookingDetails.numOfTa}</p>
+          <p>Guest Email: {bookingDetails.user.email}</p>
 
           <br />
           <hr />
@@ -83,7 +81,7 @@ const EditBookingPage = () => {
           </div>
           <button
             className="acheive-booking"
-            onClick={() => archiveBooking(bookingDetails.id)}>Archive Booking
+            onClick={() => archiveBooking(bookingDetails.id)}>Cancel Booking
           </button>
         </div>
       )}

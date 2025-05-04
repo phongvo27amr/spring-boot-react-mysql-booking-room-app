@@ -43,8 +43,8 @@ const FindBookingPage = () => {
           <p>Confirmation Code: {bookingDetails.bookingConfirmationCode}</p>
           <p>Check-in Date: {bookingDetails.checkInDate}</p>
           <p>Check-out Date: {bookingDetails.checkOutDate}</p>
-          <p>Num Of Adults: {bookingDetails.numOfStudents}</p>
-          <p>Num Of Children: {bookingDetails.numOfTa}</p>
+          <p>Number of Students: {bookingDetails.numOfStudents}</p>
+          <p>Number of TAs: {bookingDetails.numOfTa}</p>
 
           <br />
           <hr />
