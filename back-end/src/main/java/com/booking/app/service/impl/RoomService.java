@@ -4,7 +4,6 @@ import com.booking.app.dto.Response;
 import com.booking.app.dto.RoomDto;
 import com.booking.app.entity.Room;
 import com.booking.app.exception.MyException;
-import com.booking.app.repository.BookingRepository;
 import com.booking.app.repository.RoomRepository;
 import com.booking.app.service.AwsS3Service;
 import com.booking.app.service.interfac.IRoomService;
@@ -24,8 +23,6 @@ public class RoomService implements IRoomService {
 
   @Autowired
   private RoomRepository roomRepository;
-  @Autowired
-  private BookingRepository bookingRepository;
   @Autowired
   private AwsS3Service awsS3Service;
 

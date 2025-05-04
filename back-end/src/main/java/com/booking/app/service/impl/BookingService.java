@@ -10,7 +10,6 @@ import com.booking.app.repository.BookingRepository;
 import com.booking.app.repository.RoomRepository;
 import com.booking.app.repository.UserRepository;
 import com.booking.app.service.interfac.IBookingService;
-import com.booking.app.service.interfac.IRoomService;
 import com.booking.app.utils.Utils;
 
 import java.util.List;
@@ -27,19 +26,17 @@ public class BookingService implements IBookingService {
   private UserRepository userRepository;
   @Autowired
   private RoomRepository roomRepository;
-  @Autowired
-  private IRoomService roomService;
 
   @Override
   public Response saveBooking(Long roomId, Long userId, Booking bookingRequest) {
     Response response = new Response();
 
     try {
-      if (bookingRequest.getCheckOutDate().isBefore(bookingRequest.getCheckOutDate())) {
-        throw new IllegalArgumentException("Check in date must come after check out date.");
+      if (bookingRequest.getCheckOutDate().isBefore(bookingRequest.getCheckInDate())) {
+        throw new IllegalArgumentException("Check in date must come before check out date.");
       }
       Room room = roomRepository.findById(roomId).orElseThrow(() -> new MyException("Room not found."));
-      User user = userRepository.findById(userId).orElseThrow(() -> new MyException("Room not found."));
+      User user = userRepository.findById(userId).orElseThrow(() -> new MyException("User not found."));
 
       List<Booking> existingBookings = room.getBookings();
 
@@ -128,7 +125,7 @@ public class BookingService implements IBookingService {
     return response;
   }
 
-  private boolean roomIsAvailable(Booking bookingRequest, List<Booking> existingBookings) {
+  boolean roomIsAvailable(Booking bookingRequest, List<Booking> existingBookings) {
     return existingBookings.stream().noneMatch(existingBooking ->
       bookingRequest.getCheckInDate().equals(existingBooking.getCheckInDate())
         || bookingRequest.getCheckOutDate().isBefore(existingBooking.getCheckOutDate())

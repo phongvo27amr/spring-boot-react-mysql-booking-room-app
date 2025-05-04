@@ -32,7 +32,6 @@ public class UserService implements IUserService {
   @Autowired
   private AuthenticationManager authenticationManager;
 
-
   @Override
   public Response register(User user) {
     Response response = new Response();
@@ -63,9 +62,11 @@ public class UserService implements IUserService {
   public Response login(LoginRequest loginRequest) {
     Response response = new Response();
     try {
-      authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginRequest.getEmail(), loginRequest.getPassword()));
+      authenticationManager
+          .authenticate(new UsernamePasswordAuthenticationToken(loginRequest.getEmail(), loginRequest.getPassword()));
 
-      var user = userRepository.findByEmail(loginRequest.getEmail()).orElseThrow(() -> new MyException("User not found"));
+      var user = userRepository.findByEmail(loginRequest.getEmail())
+          .orElseThrow(() -> new MyException("User not found"));
 
       var token = jwtUtils.generateToken(user);
       response.setStatusCode(200);
